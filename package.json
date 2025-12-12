@@ -1,0 +1,19 @@
+{
+  "name": "kadisha-coverletter",
+  "version": "1.0.0",
+  "description": "Professional cover letter website for GN Group Business Analyst role",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "preview": "open index.html"
+  },
+  "keywords": [
+    "cover-letter",
+    "portfolio",
+    "business-analyst",
+    "interactive-cv"
+  ],
+  "author": "Kadisha Owoturo",
+  "license": "UNLICENSED",
+  "private": true
+}
