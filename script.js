@@ -4,56 +4,11 @@ const totalPages = 8;
 
 // Menu button functionality
 const menuBtn = document.querySelector('.menu-btn');
-const navMenu = document.querySelector('.nav-menu');
-
-if (menuBtn && navMenu) {
+if (menuBtn) {
     menuBtn.addEventListener('click', () => {
         menuBtn.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking a nav link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            menuBtn.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!menuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-            menuBtn.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
     });
 }
-
-// Update active nav link on scroll
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('.page');
-
-function updateActiveNavLink() {
-    let currentSection = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 200) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', updateActiveNavLink);
-window.addEventListener('load', updateActiveNavLink);
 
 // View My Fit button - scroll to page 2
 const viewFitBtn = document.querySelector('.btn-primary');
